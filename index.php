@@ -12,6 +12,15 @@
         <th>deleted_at</th>
     </tr>
     <?php
+    require "Todo.php";
+
+    $result = [];
+    try {
+        $result = Todo::findAll();
+    } catch (Exception $e) {
+        die($e);
+    }
+
     foreach ($result as $row) {
         ?>
         <tr>
